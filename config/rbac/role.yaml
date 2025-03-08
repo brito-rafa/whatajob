@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - whatajob.io
+  resources:
+  - billybobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - whatajob.io
+  resources:
+  - billybobs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - whatajob.io
+  resources:
+  - billybobs/status
+  verbs:
+  - get
+  - patch
+  - update

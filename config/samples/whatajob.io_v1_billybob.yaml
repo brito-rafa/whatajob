@@ -1,0 +1,9 @@
+apiVersion: whatajob.io/v1
+kind: Billybob
+metadata:
+  labels:
+    app.kubernetes.io/name: whatajob
+    app.kubernetes.io/managed-by: kustomize
+  name: billybob-sample
+spec:
+  numberPods: 3
