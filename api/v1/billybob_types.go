@@ -22,6 +22,7 @@ import (
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:subresource:scale:specpath=.spec.numberPods,statuspath=.status.currentPods,selectorpath=.status.selector
 
 // Billybob is the Schema for the billybobs API.
 type Billybob struct {
@@ -41,6 +42,7 @@ type BillybobSpec struct {
 type BillybobStatus struct {
 	PodNames    []string `json:"podNames,omitempty"`
 	CurrentPods int      `json:"currentPods,omitempty"`
+	Selector    string   `json:"selector,omitempty"`
 }
 
 // +kubebuilder:object:root=true
