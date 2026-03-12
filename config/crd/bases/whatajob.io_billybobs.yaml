@@ -51,9 +51,15 @@ spec:
                 items:
                   type: string
                 type: array
+              selector:
+                type: string
             type: object
         type: object
     served: true
     storage: true
     subresources:
+      scale:
+        labelSelectorPath: .status.selector
+        specReplicasPath: .spec.numberPods
+        statusReplicasPath: .status.currentPods
       status: {}
